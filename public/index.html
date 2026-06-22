@@ -154,6 +154,21 @@
       z-index: -1;
     }
 
+    /* SVG 占位图直接存在于 DOM 中，避免部分移动浏览器不绘制 CSS 伪元素。 */
+    .visual-svg {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after,
+    .product-art::before,
+    .feature-visual::before,
+    .feature-visual::after { display: none; }
+
     .placeholder-label {
       position: absolute;
       right: 22px;
@@ -556,6 +571,23 @@
           </div>
         </div>
         <div class="hero-visual" role="img" aria-label="产品主视觉占位图">
+          <svg class="visual-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="hero-object" cx="35%" cy="28%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="38%" stop-color="#ddd9d0"/>
+                <stop offset="70%" stop-color="#898780"/>
+                <stop offset="100%" stop-color="#393939"/>
+              </radialGradient>
+              <radialGradient id="hero-glow">
+                <stop offset="0%" stop-color="#dfff4f" stop-opacity=".95"/>
+                <stop offset="100%" stop-color="#dfff4f" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="600" height="600" fill="#212121"/>
+            <circle cx="315" cy="274" r="205" fill="url(#hero-object)"/>
+            <circle cx="520" cy="520" r="180" fill="url(#hero-glow)"/>
+          </svg>
           <span class="placeholder-label">产品主图待替换</span>
         </div>
       </section>
@@ -576,21 +608,33 @@
 
         <div class="product-grid">
           <a class="product-card" href="#featured">
-            <div class="product-art" role="img" aria-label="产品 01 占位图"><span class="card-label">01 / 主图</span></div>
+            <div class="product-art" role="img" aria-label="产品 01 占位图"><svg class="visual-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs><radialGradient id="product-one" cx="34%" cy="28%"><stop offset="0%" stop-color="#ffffff"/><stop offset="35%" stop-color="#d4d1cb"/><stop offset="70%" stop-color="#898681"/><stop offset="100%" stop-color="#4d4c49"/></radialGradient></defs>
+                <rect width="400" height="300" fill="#dedbd4"/>
+                <ellipse cx="200" cy="154" rx="89" ry="75" fill="url(#product-one)" transform="rotate(-18 200 154)"/>
+              </svg><span class="card-label">01 / 主图</span></div>
             <div class="product-meta">
               <div><h3>Product One</h3><p>产品类别 / 简短说明</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
-            <div class="product-art" role="img" aria-label="产品 02 占位图"><span class="card-label">02 / 主图</span></div>
+            <div class="product-art" role="img" aria-label="产品 02 占位图"><svg class="visual-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs><radialGradient id="product-two" cx="35%" cy="28%"><stop offset="0%" stop-color="#ffffff"/><stop offset="37%" stop-color="#b7c1c1"/><stop offset="72%" stop-color="#647476"/><stop offset="100%" stop-color="#354143"/></radialGradient></defs>
+                <rect width="400" height="300" fill="#b7c5c6"/>
+                <ellipse cx="200" cy="154" rx="86" ry="75" fill="url(#product-two)" transform="rotate(38 200 154)"/>
+              </svg><span class="card-label">02 / 主图</span></div>
             <div class="product-meta">
               <div><h3>Product Two</h3><p>产品类别 / 简短说明</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
-            <div class="product-art" role="img" aria-label="产品 03 占位图"><span class="card-label">03 / 主图</span></div>
+            <div class="product-art" role="img" aria-label="产品 03 占位图"><svg class="visual-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs><radialGradient id="product-three" cx="35%" cy="28%"><stop offset="0%" stop-color="#d0d0d0"/><stop offset="35%" stop-color="#777777"/><stop offset="72%" stop-color="#303030"/><stop offset="100%" stop-color="#0e0e0e"/></radialGradient></defs>
+                <rect width="400" height="300" fill="#202020"/>
+                <ellipse cx="200" cy="154" rx="88" ry="74" fill="url(#product-three)" transform="rotate(10 200 154)"/>
+              </svg><span class="card-label">03 / 主图</span></div>
             <div class="product-meta">
               <div><h3>Product Three</h3><p>产品类别 / 简短说明</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
@@ -600,7 +644,11 @@
       </section>
 
       <section class="shell feature" id="featured">
-        <div class="feature-visual" role="img" aria-label="产品多角度展示占位图"></div>
+        <div class="feature-visual" role="img" aria-label="产品多角度展示占位图"><svg class="visual-svg" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><radialGradient id="feature-object" cx="35%" cy="27%"><stop offset="0%" stop-color="#ffffff"/><stop offset="35%" stop-color="#b9c6c3"/><stop offset="72%" stop-color="#5c6d6a"/><stop offset="100%" stop-color="#24302f"/></radialGradient></defs>
+          <rect width="600" height="720" fill="#d0d9d6"/>
+          <ellipse cx="300" cy="344" rx="168" ry="154" fill="url(#feature-object)" transform="rotate(-10 300 344)"/>
+        </svg></div>
         <div class="feature-copy">
           <p class="eyebrow">Featured product / 01</p>
           <h2>产品详情页<br>展示方式</h2>
