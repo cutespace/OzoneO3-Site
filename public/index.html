@@ -2,10 +2,468 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Ben's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OZONE 产品展示">
+  <title>OZONE — Product Collection</title>
+  <style>
+    :root {
+      --ink: #151515;
+      --muted: #686868;
+      --paper: #f4f3ef;
+      --line: #d8d7d1;
+      --accent: #dfff4f;
+      --card: #e6e4de;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page { overflow: hidden; }
+
+    .shell {
+      width: min(1320px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .button:hover { background: var(--ink); color: white; transform: translateY(-2px); }
+
+    .button--light { border-color: white; color: white; }
+
+    .button--light:hover { background: white; color: var(--ink); }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .site-nav { display: flex; gap: 28px; font-size: .88rem; font-weight: 650; }
+
+    .site-nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      min-height: 620px;
+      padding: 42px 0 66px;
+      gap: 24px;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 35px 0 8px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 26px;
+      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      line-height: .92;
+      letter-spacing: -.075em;
+    }
+
+    .hero-copy > div > p:last-child {
+      max-width: 450px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 460px;
+      border-radius: var(--radius);
+      background: #212121;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+
+    .hero-visual::before {
+      width: 76%;
+      aspect-ratio: 1;
+      left: 12%;
+      top: 15%;
+      background: radial-gradient(circle at 38% 34%, #fafafa 0 4%, #d9d6cf 31%, #86847f 63%, #383838 76%);
+      box-shadow: inset -40px -45px 55px rgba(0,0,0,.28);
+    }
+
+    .hero-visual::after {
+      width: 48%;
+      aspect-ratio: 1;
+      right: -10%;
+      bottom: -20%;
+      background: var(--accent);
+      opacity: .9;
+      filter: blur(50px);
+      z-index: -1;
+    }
+
+    .placeholder-label {
+      position: absolute;
+      right: 22px;
+      bottom: 20px;
+      color: rgba(255,255,255,.75);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 24px;
+      padding: 110px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      letter-spacing: -.06em;
+      line-height: .98;
+    }
+
+    .intro-text {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      line-height: 1.45;
+    }
+
+    .collection { padding-bottom: 120px; }
+
+    .collection-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .collection-heading p { max-width: 350px; margin: 0; color: var(--muted); line-height: 1.55; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .product-card {
+      display: block;
+      padding: 13px;
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .product-card:hover .product-art { transform: scale(1.025); }
+
+    .product-art {
+      position: relative;
+      min-height: 370px;
+      overflow: hidden;
+      border-radius: 13px;
+      background: linear-gradient(145deg, #e5e3dc, #c9c5bd);
+      transition: transform .35s ease;
+    }
+
+    .product-art::before {
+      position: absolute;
+      content: "";
+      width: 52%;
+      aspect-ratio: 1;
+      left: 24%;
+      top: 18%;
+      border-radius: 45% 55% 48% 52%;
+      background: radial-gradient(circle at 34% 30%, #fff 0 5%, #d4d1cb 30%, #888681 64%, #4d4c49 82%);
+      box-shadow: inset -18px -22px 25px rgba(0,0,0,.22);
+      transform: rotate(-18deg);
+    }
+
+    .product-card:nth-child(2) .product-art { background: linear-gradient(145deg, #c9d2d3, #89999b); }
+
+    .product-card:nth-child(2) .product-art::before {
+      border-radius: 32% 68% 50% 50%;
+      background: radial-gradient(circle at 35% 30%, #fbfbfb 0 5%, #aeb9ba 35%, #607173 66%, #354143 88%);
+      transform: rotate(38deg);
+    }
+
+    .product-card:nth-child(3) .product-art { background: linear-gradient(145deg, #292929, #121212); }
+
+    .product-card:nth-child(3) .product-art::before {
+      background: radial-gradient(circle at 35% 30%, #cacaca 0 4%, #777 33%, #303030 67%, #0e0e0e 85%);
+      transform: rotate(10deg);
+    }
+
+    .card-label {
+      position: absolute;
+      top: 15px;
+      left: 16px;
+      font-size: .7rem;
+      font-weight: 750;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 18px 6px 6px;
+    }
+
+    .product-meta h3 { margin: 0 0 5px; font-size: 1rem; }
+
+    .product-meta p { margin: 0; color: var(--muted); font-size: .83rem; }
+
+    .arrow { font-size: 1.35rem; line-height: 1; }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 70px;
+      align-items: center;
+      padding: 84px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature-visual {
+      position: relative;
+      min-height: 590px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #d0d9d6;
+    }
+
+    .feature-visual::before {
+      position: absolute;
+      content: "";
+      width: 57%;
+      aspect-ratio: 1;
+      left: 21%;
+      top: 19%;
+      border-radius: 48% 52% 42% 58%;
+      background: radial-gradient(circle at 35% 27%, white 0 4%, #b9c6c3 31%, #5c6d6a 67%, #24302f 90%);
+      box-shadow: inset -27px -31px 40px rgba(0,0,0,.25);
+      transform: rotate(-10deg);
+    }
+
+    .feature-visual::after {
+      position: absolute;
+      content: "多角度产品主图";
+      right: 22px;
+      bottom: 20px;
+      color: rgba(0,0,0,.52);
+      font-size: .7rem;
+      letter-spacing: .12em;
+    }
+
+    .feature-copy p:not(.eyebrow) {
+      max-width: 440px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 40px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .specs div {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .86rem;
+    }
+
+    .specs div:nth-child(odd) { color: var(--muted); }
+
+    .cta {
+      margin: 0 0 60px;
+      padding: 72px 56px;
+      border-radius: var(--radius);
+      color: white;
+      background: var(--ink);
+    }
+
+    .cta h2 { max-width: 690px; margin-bottom: 30px; }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 24px 0 36px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: .76rem;
+    }
+
+    @media (max-width: 800px) {
+      .shell { width: min(100% - 32px, 1320px); }
+      .site-nav { display: none; }
+      .hero, .intro, .feature { grid-template-columns: 1fr; }
+      .hero { min-height: 0; padding-top: 20px; }
+      .hero-copy { gap: 56px; }
+      .hero-visual { min-height: 420px; }
+      .intro { padding: 75px 0; gap: 10px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product-art { min-height: 330px; }
+      .feature { gap: 30px; padding: 65px 0; }
+      .feature-visual { min-height: 420px; }
+      .cta { padding: 48px 28px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello All</h1>
-  <p>Website building</p>
+  <div class="page">
+    <header class="shell site-header">
+      <a class="brand" href="#top" aria-label="OZONE 首页">OZONE</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#collection">产品系列</a>
+        <a href="#featured">产品详情</a>
+        <a href="#contact">联系我们</a>
+      </nav>
+      <a class="button" href="#contact">获取目录</a>
+    </header>
+
+    <main id="top">
+      <section class="shell hero">
+        <div class="hero-copy">
+          <div>
+            <p class="eyebrow">Product Collection / 2026</p>
+            <h1>Objects for<br>everyday clarity.</h1>
+            <p>用简洁的形式、可靠的材质与细致的体验，呈现值得长期使用的产品。</p>
+          </div>
+          <div class="hero-links">
+            <a class="button" href="#collection">浏览产品</a>
+            <a class="button" href="#featured">查看详情</a>
+          </div>
+        </div>
+        <div class="hero-visual" role="img" aria-label="产品主视觉占位图">
+          <span class="placeholder-label">产品主图待替换</span>
+        </div>
+      </section>
+
+      <section class="shell intro">
+        <p class="eyebrow">About the collection</p>
+        <p class="intro-text">这是一个产品展示网站的结构样稿。后续可为每个产品替换为真实多角度图片，并补充产品说明、规格、购买或联系入口。</p>
+      </section>
+
+      <section class="shell collection" id="collection">
+        <div class="collection-heading">
+          <div>
+            <p class="eyebrow">Selected products</p>
+            <h2>产品系列</h2>
+          </div>
+          <p>每张卡片可替换为产品的封面图；点击后可进入独立详情页，或在当前页面展开多角度图库。</p>
+        </div>
+
+        <div class="product-grid">
+          <a class="product-card" href="#featured">
+            <div class="product-art" role="img" aria-label="产品 01 占位图"><span class="card-label">01 / 主图</span></div>
+            <div class="product-meta">
+              <div><h3>Product One</h3><p>产品类别 / 简短说明</p></div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <a class="product-card" href="#featured">
+            <div class="product-art" role="img" aria-label="产品 02 占位图"><span class="card-label">02 / 主图</span></div>
+            <div class="product-meta">
+              <div><h3>Product Two</h3><p>产品类别 / 简短说明</p></div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <a class="product-card" href="#featured">
+            <div class="product-art" role="img" aria-label="产品 03 占位图"><span class="card-label">03 / 主图</span></div>
+            <div class="product-meta">
+              <div><h3>Product Three</h3><p>产品类别 / 简短说明</p></div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="shell feature" id="featured">
+        <div class="feature-visual" role="img" aria-label="产品多角度展示占位图"></div>
+        <div class="feature-copy">
+          <p class="eyebrow">Featured product / 01</p>
+          <h2>产品详情页<br>展示方式</h2>
+          <p>左侧放置大尺寸产品图；可替换为图片切换组件，依次展示正面、侧面、背面和局部细节。右侧保留产品故事与核心参数。</p>
+          <div class="specs" aria-label="产品参数示例">
+            <div>材质</div><div>Aluminium / 可替换</div>
+            <div>颜色</div><div>Silver / 可替换</div>
+            <div>尺寸</div><div>000 × 000 mm / 可替换</div>
+            <div>编号</div><div>OZ-001 / 可替换</div>
+          </div>
+          <a class="button" href="#contact">咨询该产品</a>
+        </div>
+      </section>
+
+      <section class="shell cta" id="contact">
+        <p class="eyebrow" style="color: rgba(255,255,255,.6)">Contact</p>
+        <h2>准备好替换成你的产品图片和品牌内容。</h2>
+        <a class="button button--light" href="mailto:hello@example.com">hello@example.com</a>
+      </section>
+    </main>
+
+    <footer class="shell site-footer">
+      <span>© 2026 OZONE</span>
+      <span>Static site for Cloudflare Pages</span>
+    </footer>
+  </div>
 </body>
 </html>
