@@ -154,8 +154,8 @@
       z-index: -1;
     }
 
-    /* SVG 占位图直接存在于 DOM 中，避免部分移动浏览器不绘制 CSS 伪元素。 */
-    .visual-svg {
+    /* 产品图片使用常规 img 元素，兼容手机 Chrome 与其他移动浏览器。 */
+    .product-image {
       position: absolute;
       inset: 0;
       display: block;
@@ -169,11 +169,25 @@
     .feature-visual::before,
     .feature-visual::after { display: none; }
 
+    .hero-visual,
+    .feature-visual { background: #ebe9e2; }
+
+    .product-image {
+      object-fit: contain;
+      padding: 8%;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-photo { padding: 11%; }
+
+    .feature-photo { padding: 9%; }
+
+
     .placeholder-label {
       position: absolute;
       right: 22px;
       bottom: 20px;
-      color: rgba(255,255,255,.75);
+      color: rgba(0,0,0,.58);
       font-size: .7rem;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -571,23 +585,7 @@
           </div>
         </div>
         <div class="hero-visual" role="img" aria-label="产品主视觉占位图">
-          <svg class="visual-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <radialGradient id="hero-object" cx="35%" cy="28%">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="38%" stop-color="#ddd9d0"/>
-                <stop offset="70%" stop-color="#898780"/>
-                <stop offset="100%" stop-color="#393939"/>
-              </radialGradient>
-              <radialGradient id="hero-glow">
-                <stop offset="0%" stop-color="#dfff4f" stop-opacity=".95"/>
-                <stop offset="100%" stop-color="#dfff4f" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="600" height="600" fill="#212121"/>
-            <circle cx="315" cy="274" r="205" fill="url(#hero-object)"/>
-            <circle cx="520" cy="520" r="180" fill="url(#hero-glow)"/>
-          </svg>
+          <img class="product-image hero-photo" src="assets/products/fcy-3.jpg" alt="">
           <span class="placeholder-label">产品主图待替换</span>
         </div>
       </section>
@@ -608,35 +606,37 @@
 
         <div class="product-grid">
           <a class="product-card" href="#featured">
-            <div class="product-art" role="img" aria-label="产品 01 占位图"><svg class="visual-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <defs><radialGradient id="product-one" cx="34%" cy="28%"><stop offset="0%" stop-color="#ffffff"/><stop offset="35%" stop-color="#d4d1cb"/><stop offset="70%" stop-color="#898681"/><stop offset="100%" stop-color="#4d4c49"/></radialGradient></defs>
-                <rect width="400" height="300" fill="#dedbd4"/>
-                <ellipse cx="200" cy="154" rx="89" ry="75" fill="url(#product-one)" transform="rotate(-18 200 154)"/>
-              </svg><span class="card-label">01 / 主图</span></div>
+            <div class="product-art" role="img" aria-label="FCY-3 产品图"><img class="product-image" src="assets/products/fcy-3.jpg" alt="FCY-3 臭氧发生器"><span class="card-label">01 / FCY-3</span></div>
             <div class="product-meta">
-              <div><h3>Product One</h3><p>产品类别 / 简短说明</p></div>
+              <div><h3>FCY-3</h3><p>臭氧发生器</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
-            <div class="product-art" role="img" aria-label="产品 02 占位图"><svg class="visual-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <defs><radialGradient id="product-two" cx="35%" cy="28%"><stop offset="0%" stop-color="#ffffff"/><stop offset="37%" stop-color="#b7c1c1"/><stop offset="72%" stop-color="#647476"/><stop offset="100%" stop-color="#354143"/></radialGradient></defs>
-                <rect width="400" height="300" fill="#b7c5c6"/>
-                <ellipse cx="200" cy="154" rx="86" ry="75" fill="url(#product-two)" transform="rotate(38 200 154)"/>
-              </svg><span class="card-label">02 / 主图</span></div>
+            <div class="product-art" role="img" aria-label="FCY-3A 产品图"><img class="product-image" src="assets/products/fcy-3a.jpg" alt="FCY-3A 臭氧发生器"><span class="card-label">02 / FCY-3A</span></div>
             <div class="product-meta">
-              <div><h3>Product Two</h3><p>产品类别 / 简短说明</p></div>
+              <div><h3>FCY-3A</h3><p>臭氧发生器</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
-            <div class="product-art" role="img" aria-label="产品 03 占位图"><svg class="visual-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <defs><radialGradient id="product-three" cx="35%" cy="28%"><stop offset="0%" stop-color="#d0d0d0"/><stop offset="35%" stop-color="#777777"/><stop offset="72%" stop-color="#303030"/><stop offset="100%" stop-color="#0e0e0e"/></radialGradient></defs>
-                <rect width="400" height="300" fill="#202020"/>
-                <ellipse cx="200" cy="154" rx="88" ry="74" fill="url(#product-three)" transform="rotate(10 200 154)"/>
-              </svg><span class="card-label">03 / 主图</span></div>
+            <div class="product-art" role="img" aria-label="FCY-5A 产品图"><img class="product-image" src="assets/products/fcy-5a.jpg" alt="FCY-5A 臭氧发生器"><span class="card-label">03 / FCY-5A</span></div>
             <div class="product-meta">
-              <div><h3>Product Three</h3><p>产品类别 / 简短说明</p></div>
+              <div><h3>FCY-5A</h3><p>臭氧发生器</p></div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <a class="product-card" href="#featured">
+            <div class="product-art" role="img" aria-label="FCY-5B 产品图"><img class="product-image" src="assets/products/fcy-5b.jpg" alt="FCY-5B 臭氧发生器"><span class="card-label">04 / FCY-5B</span></div>
+            <div class="product-meta">
+              <div><h3>FCY-5B</h3><p>臭氧发生器</p></div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <a class="product-card" href="#featured">
+            <div class="product-art" role="img" aria-label="FCY-5C 产品图"><img class="product-image" src="assets/products/fcy-5c.jpg" alt="FCY-5C 臭氧发生器"><span class="card-label">05 / FCY-5C</span></div>
+            <div class="product-meta">
+              <div><h3>FCY-5C</h3><p>臭氧发生器</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
@@ -644,20 +644,16 @@
       </section>
 
       <section class="shell feature" id="featured">
-        <div class="feature-visual" role="img" aria-label="产品多角度展示占位图"><svg class="visual-svg" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs><radialGradient id="feature-object" cx="35%" cy="27%"><stop offset="0%" stop-color="#ffffff"/><stop offset="35%" stop-color="#b9c6c3"/><stop offset="72%" stop-color="#5c6d6a"/><stop offset="100%" stop-color="#24302f"/></radialGradient></defs>
-          <rect width="600" height="720" fill="#d0d9d6"/>
-          <ellipse cx="300" cy="344" rx="168" ry="154" fill="url(#feature-object)" transform="rotate(-10 300 344)"/>
-        </svg></div>
+        <div class="feature-visual" role="img" aria-label="产品多角度展示占位图"><img class="product-image feature-photo" src="assets/products/fcy-3.jpg" alt=""></div>
         <div class="feature-copy">
-          <p class="eyebrow">Featured product / 01</p>
-          <h2>产品详情页<br>展示方式</h2>
-          <p>左侧放置大尺寸产品图；可替换为图片切换组件，依次展示正面、侧面、背面和局部细节。右侧保留产品故事与核心参数。</p>
+          <p class="eyebrow">Featured product / FCY-3</p>
+          <h2>FCY-3<br>产品展示</h2>
+          <p>左侧为 FCY-3 产品实拍图。产品系列已按照 FCY-3、FCY-3A、FCY-5A、FCY-5B、FCY-5C 的顺序展示；后续可继续补充每个型号的多角度图库与参数。</p>
           <div class="specs" aria-label="产品参数示例">
-            <div>材质</div><div>Aluminium / 可替换</div>
-            <div>颜色</div><div>Silver / 可替换</div>
-            <div>尺寸</div><div>000 × 000 mm / 可替换</div>
-            <div>编号</div><div>OZ-001 / 可替换</div>
+            <div>材质</div><div>FCY 系列 / 可补充</div>
+            <div>颜色</div><div>以实际产品为准</div>
+            <div>图片</div><div>已上传主视图</div>
+            <div>型号</div><div>FCY-3</div>
           </div>
           <a class="button" href="#contact">咨询该产品</a>
         </div>
