@@ -303,12 +303,138 @@
     .arrow { font-size: 1.35rem; line-height: 1; }
 
     .feature {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 70px;
-      align-items: center;
       padding: 84px 0;
       border-top: 1px solid var(--line);
+    }
+
+    .feature-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .feature-heading p:last-child {
+      max-width: 470px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .product-carousel { position: relative; }
+
+    .carousel-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(300px, 72%);
+      gap: 16px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 2px 0 14px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-track::-webkit-scrollbar { display: none; }
+
+    .carousel-slide {
+      display: grid;
+      grid-template-columns: minmax(220px, .92fr) minmax(260px, 1.08fr);
+      min-height: 460px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #e6e4de;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .carousel-image {
+      position: relative;
+      min-height: 100%;
+      overflow: hidden;
+      background: #ebe9e2;
+    }
+
+    .carousel-image .product-image { padding: 10%; }
+
+    .carousel-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 38px;
+    }
+
+    .carousel-number {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .carousel-content h3 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 3.4vw, 3.45rem);
+      letter-spacing: -.06em;
+      line-height: .95;
+    }
+
+    .carousel-content > div > p:last-child {
+      max-width: 330px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .carousel-spec {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      width: 100%;
+      gap: 8px 18px;
+      margin: 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .carousel-spec strong { color: var(--ink); }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .carousel-button {
+      display: inline-grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      color: var(--ink);
+      background: transparent;
+      font: inherit;
+      font-size: 1.35rem;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .carousel-button:hover { color: white; background: var(--ink); }
+
+    .carousel-button:focus-visible,
+    .carousel-track:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
     }
 
     .feature-visual {
@@ -418,7 +544,7 @@
         min-height: 44px;
       }
 
-      .hero, .intro, .feature { grid-template-columns: 1fr; }
+      .hero, .intro { grid-template-columns: 1fr; }
 
       .hero {
         min-height: 0;
@@ -463,14 +589,30 @@
 
       .product-meta { padding: 16px 5px 7px; }
 
-      .feature {
-        gap: 30px;
-        padding: 64px 0;
+      .feature { padding: 64px 0; }
+
+      .feature-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 20px;
       }
 
-      .feature-visual {
+      .carousel-track {
+        grid-auto-columns: minmax(280px, 88%);
+        gap: 14px;
+      }
+
+      .carousel-slide {
+        grid-template-columns: 1fr;
         min-height: 0;
-        aspect-ratio: 4 / 5;
+      }
+
+      .carousel-image { aspect-ratio: 4 / 3; }
+
+      .carousel-content {
+        min-height: 280px;
+        padding: 28px;
       }
 
       .specs { margin: 30px 0; }
@@ -537,7 +679,16 @@
 
       .feature { padding: 54px 0; }
 
-      .feature-visual { aspect-ratio: 1 / 1.15; }
+      .carousel-track { grid-auto-columns: 92%; }
+
+      .carousel-content {
+        min-height: 0;
+        padding: 24px;
+      }
+
+      .carousel-content h3 { font-size: 2.2rem; }
+
+      .carousel-controls { margin-top: 10px; }
 
       .cta { padding: 38px 22px; }
     }
@@ -644,18 +795,76 @@
       </section>
 
       <section class="shell feature" id="featured">
-        <div class="feature-visual" role="img" aria-label="产品多角度展示占位图"><img class="product-image feature-photo" src="assets/products/FCY-3.png" alt=""></div>
-        <div class="feature-copy">
-          <p class="eyebrow">Featured product / FCY-3</p>
-          <h2>FCY-3<br>产品展示</h2>
-          <p>左侧为 FCY-3 产品实拍图。产品系列已按照 FCY-3、FCY-3A、FCY-5A、FCY-5B、FCY-5C 的顺序展示；后续可继续补充每个型号的多角度图库与参数。</p>
-          <div class="specs" aria-label="产品参数示例">
-            <div>材质</div><div>FCY 系列 / 可补充</div>
-            <div>颜色</div><div>以实际产品为准</div>
-            <div>图片</div><div>已上传主视图</div>
-            <div>型号</div><div>FCY-3</div>
+        <div class="feature-heading">
+          <div>
+            <p class="eyebrow">Product details</p>
+            <h2>产品详情</h2>
           </div>
-          <a class="button" href="#contact">咨询该产品</a>
+          <p>横向滑动查看全系列产品。手机可直接左右滑动，桌面端也可使用右下方控制按钮切换。</p>
+        </div>
+
+        <div class="product-carousel" aria-label="FCY 产品详情轮播">
+          <div class="carousel-track" tabindex="0">
+            <article class="carousel-slide">
+              <div class="carousel-image"><img class="product-image" src="assets/products/FCY-3.png" alt="FCY-3 臭氧发生器"></div>
+              <div class="carousel-content">
+                <div>
+                  <p class="carousel-number">01 / FCY-3</p>
+                  <h3>FCY-3</h3>
+                  <p>FCY 系列臭氧发生器。可在此处补充适用场景、技术特点和完整规格。</p>
+                </div>
+                <p class="carousel-spec"><strong>型号</strong><span>FCY-3</span><strong>图片</strong><span>主视图</span></p>
+              </div>
+            </article>
+            <article class="carousel-slide">
+              <div class="carousel-image"><img class="product-image" src="assets/products/FCY-3A.png" alt="FCY-3A 臭氧发生器" loading="lazy"></div>
+              <div class="carousel-content">
+                <div>
+                  <p class="carousel-number">02 / FCY-3A</p>
+                  <h3>FCY-3A</h3>
+                  <p>FCY 系列臭氧发生器。可在此处补充适用场景、技术特点和完整规格。</p>
+                </div>
+                <p class="carousel-spec"><strong>型号</strong><span>FCY-3A</span><strong>图片</strong><span>主视图</span></p>
+              </div>
+            </article>
+            <article class="carousel-slide">
+              <div class="carousel-image"><img class="product-image" src="assets/products/FCY-5A.png" alt="FCY-5A 臭氧发生器" loading="lazy"></div>
+              <div class="carousel-content">
+                <div>
+                  <p class="carousel-number">03 / FCY-5A</p>
+                  <h3>FCY-5A</h3>
+                  <p>FCY 系列臭氧发生器。可在此处补充适用场景、技术特点和完整规格。</p>
+                </div>
+                <p class="carousel-spec"><strong>型号</strong><span>FCY-5A</span><strong>图片</strong><span>主视图</span></p>
+              </div>
+            </article>
+            <article class="carousel-slide">
+              <div class="carousel-image"><img class="product-image" src="assets/products/FCY-5B.png" alt="FCY-5B 臭氧发生器" loading="lazy"></div>
+              <div class="carousel-content">
+                <div>
+                  <p class="carousel-number">04 / FCY-5B</p>
+                  <h3>FCY-5B</h3>
+                  <p>FCY 系列臭氧发生器。可在此处补充适用场景、技术特点和完整规格。</p>
+                </div>
+                <p class="carousel-spec"><strong>型号</strong><span>FCY-5B</span><strong>图片</strong><span>主视图</span></p>
+              </div>
+            </article>
+            <article class="carousel-slide">
+              <div class="carousel-image"><img class="product-image" src="assets/products/FCY-5C.png" alt="FCY-5C 臭氧发生器" loading="lazy"></div>
+              <div class="carousel-content">
+                <div>
+                  <p class="carousel-number">05 / FCY-5C</p>
+                  <h3>FCY-5C</h3>
+                  <p>FCY 系列臭氧发生器。可在此处补充适用场景、技术特点和完整规格。</p>
+                </div>
+                <p class="carousel-spec"><strong>型号</strong><span>FCY-5C</span><strong>图片</strong><span>主视图</span></p>
+              </div>
+            </article>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" data-carousel="previous" aria-label="查看上一个产品">←</button>
+            <button class="carousel-button" type="button" data-carousel="next" aria-label="查看下一个产品">→</button>
+          </div>
         </div>
       </section>
 
@@ -671,5 +880,15 @@
       <span>Static site for Cloudflare Pages</span>
     </footer>
   </div>
+
+  <script>
+    (() => {
+      const track = document.querySelector('.carousel-track');
+      if (!track) return;
+      const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * 0.86, behavior: 'smooth' });
+      document.querySelector('[data-carousel="previous"]').addEventListener('click', () => move(-1));
+      document.querySelector('[data-carousel="next"]').addEventListener('click', () => move(1));
+    })();
+  </script>
 </body>
 </html>
