@@ -319,9 +319,7 @@
     .product-carousel { position: relative; }
 
     .carousel-track {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(300px, 72%);
+      display: flex;
       gap: 16px;
       overflow-x: auto;
       overscroll-behavior-x: contain;
@@ -336,7 +334,9 @@
 
     .carousel-slide {
       display: grid;
+      flex: 0 0 min(920px, calc(100% - 112px));
       grid-template-columns: minmax(220px, .92fr) minmax(260px, 1.08fr);
+      min-width: 0;
       min-height: 460px;
       overflow: hidden;
       border-radius: var(--radius);
@@ -592,12 +592,10 @@
         margin-bottom: 20px;
       }
 
-      .carousel-track {
-        grid-auto-columns: minmax(280px, 88%);
-        gap: 14px;
-      }
+      .carousel-track { gap: 14px; }
 
       .carousel-slide {
+        flex-basis: min(88vw, 560px);
         grid-template-columns: 1fr;
         min-height: 0;
       }
@@ -673,7 +671,7 @@
 
       .feature { padding: 54px 0; }
 
-      .carousel-track { grid-auto-columns: 92%; }
+      .carousel-slide { flex-basis: calc(100vw - 56px); }
 
       .carousel-content {
         min-height: 0;
