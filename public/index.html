@@ -83,6 +83,34 @@
 
     .site-nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .language-toggle {
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: transparent;
+      font: inherit;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .language-toggle:hover { border-color: var(--ink); background: #ebe9e2; }
+
+    .language-toggle:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
     .hero {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -524,7 +552,10 @@
         padding: 12px 0 0;
       }
 
-      .site-header > .button {
+      .header-actions { margin-left: auto; }
+
+      .header-actions .button,
+      .language-toggle {
         min-height: 42px;
         padding: 0 15px;
         font-size: .82rem;
@@ -719,79 +750,82 @@
     <header class="shell site-header">
       <a class="brand" href="#top" aria-label="OZONE 首页">OZONE</a>
       <nav class="site-nav" aria-label="主导航">
-        <a href="#collection">产品系列</a>
-        <a href="#featured">产品详情</a>
-        <a href="#contact">联系我们</a>
+        <a href="#collection" data-i18n="nav.collection">产品系列</a>
+        <a href="#featured" data-i18n="nav.details">产品详情</a>
+        <a href="#contact" data-i18n="nav.contact">联系我们</a>
       </nav>
-      <a class="button" href="#contact">获取目录</a>
+      <div class="header-actions">
+        <button class="language-toggle" type="button" id="language-toggle" aria-label="切换为英文">中 / EN</button>
+        <a class="button" href="#contact" data-i18n="nav.catalog">获取目录</a>
+      </div>
     </header>
 
     <main id="top">
       <section class="shell hero">
         <div class="hero-copy">
           <div>
-            <p class="eyebrow">Product Collection / 2026</p>
-            <h1>Objects for<br>everyday clarity.</h1>
-            <p>用简洁的形式、可靠的材质与细致的体验，呈现值得长期使用的产品。</p>
+            <p class="eyebrow" data-i18n="hero.eyebrow">产品系列 / 2026</p>
+            <h1 data-i18n-html="hero.title">为日常而生的<br>清晰体验。</h1>
+            <p data-i18n="hero.description">用简洁的形式、可靠的材质与细致的体验，呈现值得长期使用的产品。</p>
           </div>
           <div class="hero-links">
-            <a class="button" href="#collection">浏览产品</a>
-            <a class="button" href="#featured">查看详情</a>
+            <a class="button" href="#collection" data-i18n="hero.browse">浏览产品</a>
+            <a class="button" href="#featured" data-i18n="hero.details">查看详情</a>
           </div>
         </div>
         <div class="hero-visual" role="img" aria-label="产品主视觉占位图">
           <img class="product-image hero-photo" src="assets/products/FCY-3.webp" alt="">
-          <span class="placeholder-label">产品主图待替换</span>
+          <span class="placeholder-label" data-i18n="hero.imageLabel">产品主图</span>
         </div>
       </section>
 
       <section class="shell intro">
-        <p class="eyebrow">About the collection</p>
-        <p class="intro-text">这是一个产品展示网站的结构样稿。后续可为每个产品替换为真实多角度图片，并补充产品说明、规格、购买或联系入口。</p>
+        <p class="eyebrow" data-i18n="intro.eyebrow">关于产品系列</p>
+        <p class="intro-text" data-i18n="intro.text">展示 FCY 系列臭氧设备的产品信息、应用场景与技术参数。</p>
       </section>
 
       <section class="shell collection" id="collection">
         <div class="collection-heading">
           <div>
-            <p class="eyebrow">Selected products</p>
-            <h2>产品系列</h2>
+            <p class="eyebrow" data-i18n="collection.eyebrow">精选产品</p>
+            <h2 data-i18n="collection.title">产品系列</h2>
           </div>
-          <p>每张卡片可替换为产品的封面图；点击后可进入独立详情页，或在当前页面展开多角度图库。</p>
+          <p data-i18n="collection.description">浏览 FCY 系列臭氧设备及对应的臭氧发生量。</p>
         </div>
 
         <div class="product-grid">
           <a class="product-card" href="#featured">
             <div class="product-art" role="img" aria-label="FCY-3 产品图"><img class="product-image" src="assets/products/FCY-3.webp" alt="FCY-3 臭氧发生器"><span class="card-label">01 / FCY-3</span></div>
             <div class="product-meta">
-              <div><h3>FCY-3</h3><p>臭氧量 2.0 g/h</p></div>
+              <div><h3>FCY-3</h3><p data-i18n="product.fcy3.output">臭氧量 2.0 g/h</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
             <div class="product-art" role="img" aria-label="FCY-3A 产品图"><img class="product-image" src="assets/products/FCY-3A.webp" alt="FCY-3A 臭氧发生器"><span class="card-label">02 / FCY-3A</span></div>
             <div class="product-meta">
-              <div><h3>FCY-3A</h3><p>臭氧量 4.0 g/h</p></div>
+              <div><h3>FCY-3A</h3><p data-i18n="product.fcy3a.output">臭氧量 4.0 g/h</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
             <div class="product-art" role="img" aria-label="FCY-5A 产品图"><img class="product-image" src="assets/products/FCY-5A.webp" alt="FCY-5A 臭氧发生器"><span class="card-label">03 / FCY-5A</span></div>
             <div class="product-meta">
-              <div><h3>FCY-5A</h3><p>臭氧量 10.0 g/h</p></div>
+              <div><h3>FCY-5A</h3><p data-i18n="product.fcy5a.output">臭氧量 10.0 g/h</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
             <div class="product-art" role="img" aria-label="FCY-5B 产品图"><img class="product-image" src="assets/products/FCY-5B.webp" alt="FCY-5B 臭氧发生器"><span class="card-label">04 / FCY-5B</span></div>
             <div class="product-meta">
-              <div><h3>FCY-5B</h3><p>臭氧量 10.0 g/h</p></div>
+              <div><h3>FCY-5B</h3><p data-i18n="product.fcy5b.output">臭氧量 10.0 g/h</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
           <a class="product-card" href="#featured">
             <div class="product-art" role="img" aria-label="FCY-5C 产品图"><img class="product-image" src="assets/products/FCY-5C.webp" alt="FCY-5C 臭氧发生器"><span class="card-label">05 / FCY-5C</span></div>
             <div class="product-meta">
-              <div><h3>FCY-5C</h3><p>臭氧量 15.0 g/h</p></div>
+              <div><h3>FCY-5C</h3><p data-i18n="product.fcy5c.output">臭氧量 15.0 g/h</p></div>
               <span class="arrow" aria-hidden="true">↗</span>
             </div>
           </a>
@@ -801,10 +835,10 @@
       <section class="shell feature" id="featured">
         <div class="feature-heading">
           <div>
-            <p class="eyebrow">Product details</p>
-            <h2>产品详情</h2>
+            <p class="eyebrow" data-i18n="details.eyebrow">产品详情</p>
+            <h2 data-i18n="details.title">产品详情</h2>
           </div>
-          <p>横向滑动查看全系列产品。手机可直接左右滑动，桌面端也可使用右下方控制按钮切换。</p>
+          <p data-i18n="details.description">横向滑动查看全系列产品。手机可直接左右滑动，桌面端也可使用右下方控制按钮切换。</p>
         </div>
 
         <div class="product-carousel" aria-label="FCY 产品详情轮播">
@@ -815,9 +849,9 @@
                 <div>
                   <p class="carousel-number">01 / FCY-3</p>
                   <h3>FCY-3</h3>
-                  <p>适用于20m³接种室、更衣室的臭氧发生器。</p>
+                  <p data-i18n="product.fcy3.description">适用于20m³接种室、更衣室的臭氧发生器。</p>
                 </div>
-                <p class="carousel-spec"><strong>型号</strong><span>FCY-3</span><strong>臭氧量</strong><span>2.0 g/h</span><strong>适用范围</strong><span>20m³接种室、更衣室</span><strong>尺寸（长×宽×高）</strong><span>340 × 165 × 75 mm</span><strong>功率</strong><span>40 W</span></p>
+                <p class="carousel-spec"><strong data-i18n="label.model">型号</strong><span>FCY-3</span><strong data-i18n="label.output">臭氧量</strong><span>2.0 g/h</span><strong data-i18n="label.scope">适用范围</strong><span data-i18n="product.fcy3.scope">20m³接种室、更衣室</span><strong data-i18n="label.size">尺寸（长×宽×高）</strong><span>340 × 165 × 75 mm</span><strong data-i18n="label.power">功率</strong><span>40 W</span></p>
               </div>
             </article>
             <article class="carousel-slide">
@@ -826,9 +860,9 @@
                 <div>
                   <p class="carousel-number">02 / FCY-3A</p>
                   <h3>FCY-3A</h3>
-                  <p>适用于40m³以下接种室、更衣室的臭氧发生器。</p>
+                  <p data-i18n="product.fcy3a.description">适用于40m³以下接种室、更衣室的臭氧发生器。</p>
                 </div>
-                <p class="carousel-spec"><strong>型号</strong><span>FCY-3A</span><strong>臭氧量</strong><span>4.0 g/h</span><strong>适用范围</strong><span>40m³以下接种室、更衣室</span><strong>尺寸（长×宽×高）</strong><span>470 × 100 × 200 mm</span><strong>功率</strong><span>100 W</span></p>
+                <p class="carousel-spec"><strong data-i18n="label.model">型号</strong><span>FCY-3A</span><strong data-i18n="label.output">臭氧量</strong><span>4.0 g/h</span><strong data-i18n="label.scope">适用范围</strong><span data-i18n="product.fcy3a.scope">40m³以下接种室、更衣室</span><strong data-i18n="label.size">尺寸（长×宽×高）</strong><span>470 × 100 × 200 mm</span><strong data-i18n="label.power">功率</strong><span>100 W</span></p>
               </div>
             </article>
             <article class="carousel-slide">
@@ -837,9 +871,9 @@
                 <div>
                   <p class="carousel-number">03 / FCY-5A</p>
                   <h3>FCY-5A</h3>
-                  <p>适用于100m³以下接种室、200m³以下菇房的臭氧发生器。</p>
+                  <p data-i18n="product.fcy5a.description">适用于100m³以下接种室、200m³以下菇房的臭氧发生器。</p>
                 </div>
-                <p class="carousel-spec"><strong>型号</strong><span>FCY-5A</span><strong>臭氧量</strong><span>10.0 g/h</span><strong>适用范围</strong><span>100m³以下接种室、200m³以下菇房</span><strong>尺寸（长×宽×高）</strong><span>510 × 180 × 480 mm</span><strong>功率</strong><span>300 W</span></p>
+                <p class="carousel-spec"><strong data-i18n="label.model">型号</strong><span>FCY-5A</span><strong data-i18n="label.output">臭氧量</strong><span>10.0 g/h</span><strong data-i18n="label.scope">适用范围</strong><span data-i18n="product.fcy5a.scope">100m³以下接种室、200m³以下菇房</span><strong data-i18n="label.size">尺寸（长×宽×高）</strong><span>510 × 180 × 480 mm</span><strong data-i18n="label.power">功率</strong><span>300 W</span></p>
               </div>
             </article>
             <article class="carousel-slide">
@@ -848,9 +882,9 @@
                 <div>
                   <p class="carousel-number">04 / FCY-5B</p>
                   <h3>FCY-5B</h3>
-                  <p>适用于100m³以下接种室、200m³以下菇房的臭氧发生器。</p>
+                  <p data-i18n="product.fcy5b.description">适用于100m³以下接种室、200m³以下菇房的臭氧发生器。</p>
                 </div>
-                <p class="carousel-spec"><strong>型号</strong><span>FCY-5B</span><strong>臭氧量</strong><span>10.0 g/h</span><strong>适用范围</strong><span>100m³以下接种室、200m³以下菇房</span><strong>尺寸（长×宽×高）</strong><span>350 × 225 × 660 mm</span><strong>功率</strong><span>300 W</span></p>
+                <p class="carousel-spec"><strong data-i18n="label.model">型号</strong><span>FCY-5B</span><strong data-i18n="label.output">臭氧量</strong><span>10.0 g/h</span><strong data-i18n="label.scope">适用范围</strong><span data-i18n="product.fcy5b.scope">100m³以下接种室、200m³以下菇房</span><strong data-i18n="label.size">尺寸（长×宽×高）</strong><span>350 × 225 × 660 mm</span><strong data-i18n="label.power">功率</strong><span>300 W</span></p>
               </div>
             </article>
             <article class="carousel-slide">
@@ -859,9 +893,9 @@
                 <div>
                   <p class="carousel-number">05 / FCY-5C</p>
                   <h3>FCY-5C</h3>
-                  <p>适用于150m³以下接种室、300m³以下菇房的臭氧发生器。</p>
+                  <p data-i18n="product.fcy5c.description">适用于150m³以下接种室、300m³以下菇房的臭氧发生器。</p>
                 </div>
-                <p class="carousel-spec"><strong>型号</strong><span>FCY-5C</span><strong>臭氧量</strong><span>15.0 g/h</span><strong>适用范围</strong><span>150m³以下接种室、300m³以下菇房</span><strong>尺寸（长×宽×高）</strong><span>510 × 280 × 470 mm</span><strong>功率</strong><span>400 W</span></p>
+                <p class="carousel-spec"><strong data-i18n="label.model">型号</strong><span>FCY-5C</span><strong data-i18n="label.output">臭氧量</strong><span>15.0 g/h</span><strong data-i18n="label.scope">适用范围</strong><span data-i18n="product.fcy5c.scope">150m³以下接种室、300m³以下菇房</span><strong data-i18n="label.size">尺寸（长×宽×高）</strong><span>510 × 280 × 470 mm</span><strong data-i18n="label.power">功率</strong><span>400 W</span></p>
               </div>
             </article>
           </div>
@@ -874,17 +908,17 @@
 
       <section class="shell cta" id="contact">
         <p class="eyebrow" style="color: rgba(255,255,255,.6)">Contact</p>
-        <h2>获取产品资料，或咨询适合你的臭氧设备方案。</h2>
+        <h2 data-i18n="contact.title">获取产品资料，或咨询适合你的臭氧设备方案。</h2>
         <div class="contact-details">
           <a class="button button--light" href="mailto:niceozone@163.com">niceozone@163.com</a>
-          <a class="button button--light" href="tel:19850420698">19850420698 · 张经理（微信同号）</a>
+          <a class="button button--light" href="tel:19850420698">19850420698 · <span data-i18n="contact.manager">张经理（微信同号）</span></a>
         </div>
       </section>
     </main>
 
     <footer class="shell site-footer">
       <span>© 2026 OZONE</span>
-      <span>Static site for Cloudflare Pages</span>
+      <span data-i18n="footer.hosting">基于 Cloudflare Pages 构建</span>
     </footer>
   </div>
 
@@ -895,6 +929,63 @@
       const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * 0.86, behavior: 'smooth' });
       document.querySelector('[data-carousel="previous"]').addEventListener('click', () => move(-1));
       document.querySelector('[data-carousel="next"]').addEventListener('click', () => move(1));
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const messages = {
+        zh: {
+          "nav.collection":"产品系列", "nav.details":"产品详情", "nav.contact":"联系我们", "nav.catalog":"获取目录",
+          "hero.eyebrow":"产品系列 / 2026", "hero.title":"为日常而生的<br>清晰体验。", "hero.description":"用简洁的形式、可靠的材质与细致的体验，呈现值得长期使用的产品。", "hero.browse":"浏览产品", "hero.details":"查看详情", "hero.imageLabel":"产品主图",
+          "intro.eyebrow":"关于产品系列", "intro.text":"展示 FCY 系列臭氧设备的产品信息、应用场景与技术参数。",
+          "collection.eyebrow":"精选产品", "collection.title":"产品系列", "collection.description":"浏览 FCY 系列臭氧设备及对应的臭氧发生量。",
+          "details.eyebrow":"产品详情", "details.title":"产品详情", "details.description":"横向滑动查看全系列产品。手机可直接左右滑动，桌面端也可使用右下方控制按钮切换。",
+          "label.model":"型号", "label.output":"臭氧量", "label.scope":"适用范围", "label.size":"尺寸（长×宽×高）", "label.power":"功率",
+          "product.fcy3.output":"臭氧量 2.0 g/h", "product.fcy3.description":"适用于20m³接种室、更衣室的臭氧发生器。", "product.fcy3.scope":"20m³接种室、更衣室",
+          "product.fcy3a.output":"臭氧量 4.0 g/h", "product.fcy3a.description":"适用于40m³以下接种室、更衣室的臭氧发生器。", "product.fcy3a.scope":"40m³以下接种室、更衣室",
+          "product.fcy5a.output":"臭氧量 10.0 g/h", "product.fcy5a.description":"适用于100m³以下接种室、200m³以下菇房的臭氧发生器。", "product.fcy5a.scope":"100m³以下接种室、200m³以下菇房",
+          "product.fcy5b.output":"臭氧量 10.0 g/h", "product.fcy5b.description":"适用于100m³以下接种室、200m³以下菇房的臭氧发生器。", "product.fcy5b.scope":"100m³以下接种室、200m³以下菇房",
+          "product.fcy5c.output":"臭氧量 15.0 g/h", "product.fcy5c.description":"适用于150m³以下接种室、300m³以下菇房的臭氧发生器。", "product.fcy5c.scope":"150m³以下接种室、300m³以下菇房",
+          "contact.title":"获取产品资料，或咨询适合你的臭氧设备方案。", "contact.manager":"张经理（微信同号）", "footer.hosting":"基于 Cloudflare Pages 构建"
+        },
+        en: {
+          "nav.collection":"Products", "nav.details":"Details", "nav.contact":"Contact", "nav.catalog":"Get catalogue",
+          "hero.eyebrow":"PRODUCT COLLECTION / 2026", "hero.title":"Objects for<br>everyday clarity.", "hero.description":"Reliable materials and thoughtful design for products made to serve every day.", "hero.browse":"Browse products", "hero.details":"View details", "hero.imageLabel":"Product image",
+          "intro.eyebrow":"ABOUT THE COLLECTION", "intro.text":"Explore FCY ozone equipment, including applications and technical specifications.",
+          "collection.eyebrow":"SELECTED PRODUCTS", "collection.title":"Product collection", "collection.description":"Explore the FCY ozone equipment range and its ozone output.",
+          "details.eyebrow":"PRODUCT DETAILS", "details.title":"Product details", "details.description":"Swipe horizontally to explore the full range. On desktop, use the controls at the lower right to move between products.",
+          "label.model":"Model", "label.output":"Ozone output", "label.scope":"Application", "label.size":"Dimensions (L × W × H)", "label.power":"Power",
+          "product.fcy3.output":"Ozone output 2.0 g/h", "product.fcy3.description":"For 20 m³ inoculation rooms and changing rooms.", "product.fcy3.scope":"20 m³ inoculation rooms and changing rooms",
+          "product.fcy3a.output":"Ozone output 4.0 g/h", "product.fcy3a.description":"For inoculation rooms and changing rooms up to 40 m³.", "product.fcy3a.scope":"Inoculation rooms and changing rooms up to 40 m³",
+          "product.fcy5a.output":"Ozone output 10.0 g/h", "product.fcy5a.description":"For inoculation rooms up to 100 m³ and mushroom rooms up to 200 m³.", "product.fcy5a.scope":"Inoculation rooms up to 100 m³; mushroom rooms up to 200 m³",
+          "product.fcy5b.output":"Ozone output 10.0 g/h", "product.fcy5b.description":"For inoculation rooms up to 100 m³ and mushroom rooms up to 200 m³.", "product.fcy5b.scope":"Inoculation rooms up to 100 m³; mushroom rooms up to 200 m³",
+          "product.fcy5c.output":"Ozone output 15.0 g/h", "product.fcy5c.description":"For inoculation rooms up to 150 m³ and mushroom rooms up to 300 m³.", "product.fcy5c.scope":"Inoculation rooms up to 150 m³; mushroom rooms up to 300 m³",
+          "contact.title":"Request product information or discuss the right ozone equipment solution.", "contact.manager":"Manager Zhang · WeChat: same number", "footer.hosting":"Static site on Cloudflare Pages"
+        }
+      };
+
+      const toggle = document.getElementById("language-toggle");
+      const applyLanguage = (language) => {
+        const dictionary = messages[language];
+        document.documentElement.lang = language === "en" ? "en" : "zh-CN";
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const value = dictionary[element.dataset.i18n];
+          if (value) element.textContent = value;
+        });
+        document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+          const value = dictionary[element.dataset.i18nHtml];
+          if (value) element.innerHTML = value;
+        });
+        toggle.setAttribute("aria-label", language === "zh" ? "Switch to English" : "切换为中文");
+        toggle.setAttribute("aria-pressed", String(language === "en"));
+        try { localStorage.setItem("ozone-language", language); } catch (_) {}
+      };
+
+      let language = "zh";
+      try { language = localStorage.getItem("ozone-language") === "en" ? "en" : "zh"; } catch (_) {}
+      applyLanguage(language);
+      toggle.addEventListener("click", () => applyLanguage(document.documentElement.lang === "en" ? "zh" : "en"));
     })();
   </script>
 </body>
