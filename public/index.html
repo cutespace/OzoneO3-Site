@@ -993,8 +993,19 @@
 
     .cta h2 { position: relative; z-index: 1; max-width: 720px; font-size: clamp(2.7rem, 4.5vw, 4.9rem); }
     .cta .contact-details { position: relative; z-index: 1; }
-    .button--light { border-color: rgba(255,255,255,.72); }
-    .button--light:hover { color: var(--deep-sage); background: #f8f5ee; }
+    .cta .button--light,
+    .cta .button--light:hover,
+    .cta .button--light:focus-visible,
+    .cta .button--light:active {
+      border-color: #fff;
+      color: var(--deep-sage);
+      background: #fff;
+    }
+
+    .cta .button--light:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 4px;
+    }
 
     .site-footer { border-color: var(--line); }
 
