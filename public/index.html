@@ -825,11 +825,18 @@
     .hero-links .button:first-child:hover { background: var(--accent); border-color: var(--accent); }
 
     .language-toggle {
+      position: fixed;
+      z-index: 1000;
+      top: max(16px, env(safe-area-inset-top));
+      right: max(16px, env(safe-area-inset-right));
       border-color: var(--line);
       border-radius: 3px;
       color: var(--deep-sage);
       background: #fffdf8;
+      box-shadow: 0 8px 24px rgba(38, 52, 46, .14);
     }
+
+    .header-actions { margin-right: 86px; }
 
     .hero {
       grid-template-columns: 1fr .88fr;
@@ -1023,7 +1030,13 @@
     @media (max-width: 480px) {
       .shell { width: min(100% - 28px, 1320px); }
       .site-nav { gap: 18px; }
-      .language-toggle { padding: 0 11px; }
+      .language-toggle {
+        top: max(12px, env(safe-area-inset-top));
+        right: max(12px, env(safe-area-inset-right));
+        padding: 0 11px;
+      }
+
+      .header-actions { margin-right: 76px; }
       h1 { font-size: clamp(3.35rem, 15vw, 4.8rem); }
       .hero-visual { border-radius: 6px; }
       .collection-heading, .feature-heading { padding-bottom: 14px; }
