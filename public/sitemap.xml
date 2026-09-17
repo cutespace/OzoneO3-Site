@@ -98,4 +98,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
     <lastmod>2026-09-17</lastmod>
   </url>
+  <url>
+    <loc>https://ozoneo3.pages.dev/zh/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
+    <lastmod>2026-09-17</lastmod>
+  </url>
+  <url>
+    <loc>https://ozoneo3.pages.dev/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
+    <lastmod>2026-09-17</lastmod>
+  </url>
 </urlset>
