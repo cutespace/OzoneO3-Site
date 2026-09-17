@@ -9,7 +9,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://ozoneo3.pages.dev/">
   <link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/">
-  <link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/">
+  <link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/"><link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/">
   <link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OZONE">
@@ -1183,7 +1183,8 @@
       .cta { padding: 46px 24px; border-radius: 6px; }
     }
 
-  </style>
+  .language-switcher{position:fixed;top:max(14px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));z-index:1000;display:flex;gap:6px}.language-switcher .language-toggle{position:static;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:rgba(248,245,238,.94);backdrop-filter:blur(10px)}@media(max-width:480px){.language-switcher{right:max(10px,env(safe-area-inset-right))}.language-switcher .language-toggle{min-width:42px;padding:0 9px}.header-actions{margin-right:118px}}
+</style>
 </head>
 <body>
   <div class="page">
@@ -1196,7 +1197,7 @@
         <a href="#contact" data-i18n="nav.contact">联系我们</a>
       </nav>
       <div class="header-actions">
-        <a class="language-toggle" href="/en/" hreflang="en" lang="en" aria-label="View English website">EN</a>
+        <div class="language-switcher" aria-label="语言选择"><a class="language-toggle" href="/en/" hreflang="en" lang="en">EN</a><a class="language-toggle" href="/fr/" hreflang="fr" lang="fr">FR</a></div>
         <a class="button" href="#contact" data-i18n="nav.catalog">获取目录</a>
       </div>
     </header>
