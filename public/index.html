@@ -985,6 +985,23 @@
       background: #f1efe8;
     }
 
+    .application-card.has-image { padding: 10px 10px 24px; }
+
+    .application-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 18px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .application-card.has-image > span,
+    .application-card.has-image > h3,
+    .application-card.has-image > p { margin-right: 16px; margin-left: 16px; }
+
+    .application-card.has-image h3 { margin-top: 24px; }
+
     .application-card span {
       color: var(--accent);
       font-size: .72rem;
@@ -1218,9 +1235,9 @@
         </div>
         <div class="application-grid">
           <article class="application-card"><span>01</span><h3>食用菌生产</h3><p>适用于接种室、菇房与更衣室，结合生产流程规划设备规格、运行时间与通风安排。</p></article>
-          <article class="application-card"><span>02</span><h3>学校</h3><p>可针对教室、宿舍、图书馆等空间，在清场后的非使用时段制定阶段性处理方案。</p></article>
-          <article class="application-card"><span>03</span><h3>医院与医疗场所</h3><p>仅作为经专业评估的环境处理手段，不替代常规清洁、消毒和医院感染控制流程。</p></article>
-          <article class="application-card"><span>04</span><h3>商业综合体及公共场所</h3><p>面向商场、酒店、办公区、交通服务空间等，按面积、分区和通风条件进行方案设计。</p></article>
+          <article class="application-card has-image"><img class="application-image" src="/assets/applications/school.webp" alt="无人状态下的现代学校教室" width="800" height="600" loading="lazy" decoding="async"><span>02</span><h3>学校</h3><p>可针对教室、宿舍、图书馆等空间，在清场后的非使用时段制定阶段性处理方案。</p></article>
+          <article class="application-card has-image"><img class="application-image" src="/assets/applications/hospital.webp" alt="无人状态下的现代医院走廊" width="800" height="600" loading="lazy" decoding="async"><span>03</span><h3>医院与医疗场所</h3><p>仅作为经专业评估的环境处理手段，不替代常规清洁、消毒和医院感染控制流程。</p></article>
+          <article class="application-card has-image"><img class="application-image" src="/assets/applications/commercial-public-space.webp" alt="无人状态下的商业综合体公共空间" width="800" height="600" loading="lazy" decoding="async"><span>04</span><h3>商业综合体及公共场所</h3><p>面向商场、酒店、办公区、交通服务空间等，按面积、分区和通风条件进行方案设计。</p></article>
         </div>
         <p class="application-note">安全提示：臭氧处理期间人员和动物必须离场；处理完成后应预留分解时间并充分通风，确认符合当地职业健康和公共场所安全要求后方可重新进入。</p>
         <div class="application-actions"><a class="button" href="/zh/applications/mushroom-farm-ozone-disinfection/">查看食用菌应用选型指南</a><a class="button" href="/zh/contact/#inquiry-form">提交公共场所需求</a></div>
