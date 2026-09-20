@@ -1,195 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ozoneo3.pages.dev/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/zh/products/fcy-3/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/products/fcy-3/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/products/fcy-3/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-3/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/zh/products/fcy-3a/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/products/fcy-3a/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/products/fcy-3a/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-3a/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/zh/products/fcy-5a/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/products/fcy-5a/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/products/fcy-5a/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5a/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/zh/products/fcy-5b/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/products/fcy-5b/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/products/fcy-5b/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5b/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/zh/products/fcy-5c/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/products/fcy-5c/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/products/fcy-5c/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/products/fcy-5c/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/zh/applications/mushroom-farm-ozone-disinfection/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/applications/mushroom-farm-ozone-disinfection/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/applications/mushroom-farm-ozone-disinfection/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/applications/desinfection-ozone-champignonniere/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/applications/mushroom-farm-ozone-disinfection/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/applications/mushroom-farm-ozone-disinfection/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/applications/mushroom-farm-ozone-disinfection/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/applications/desinfection-ozone-champignonniere/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/applications/desinfection-ozone-champignonniere/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/applications/mushroom-farm-ozone-disinfection/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/applications/mushroom-farm-ozone-disinfection/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/applications/desinfection-ozone-champignonniere/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/zh/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/contact/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/en/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/contact/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://ozoneo3.pages.dev/fr/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ozoneo3.pages.dev/zh/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ozoneo3.pages.dev/en/contact/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ozoneo3.pages.dev/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ozoneo3.pages.dev/"/>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
 </urlset>
