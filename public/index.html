@@ -971,36 +971,56 @@
 
     .feature-heading p:last-child { color: var(--muted); }
 
+    .application-carousel { position: relative; }
+
     .application-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 2px 0 16px;
+      -webkit-overflow-scrolling: touch;
     }
 
+    .application-grid::-webkit-scrollbar { display: none; }
+
     .application-card {
-      min-height: 250px;
-      padding: 26px;
+      display: grid;
+      flex: 0 0 min(940px, calc(100% - 96px));
+      grid-template-columns: minmax(280px, 1.12fr) minmax(260px, .88fr);
+      min-width: 0;
+      min-height: 460px;
+      overflow: hidden;
+      padding: 0;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #f1efe8;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
     }
 
-    .application-card.has-image { padding: 10px 10px 24px; }
+    .application-card.has-image { padding: 0; }
 
     .application-image {
       display: block;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      margin-bottom: 18px;
-      border-radius: 5px;
+      height: 100%;
+      min-height: 460px;
       object-fit: cover;
     }
 
-    .application-card.has-image > span,
-    .application-card.has-image > h3,
-    .application-card.has-image > p { margin-right: 16px; margin-left: 16px; }
+    .application-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 46px;
+    }
 
-    .application-card.has-image h3 { margin-top: 24px; }
+    .application-card.has-image h3 { margin-top: 30px; }
 
     .application-card span {
       color: var(--accent);
@@ -1129,8 +1149,10 @@
       .hero-visual { border-radius: 6px; }
       .collection-heading, .feature-heading { padding-bottom: 14px; }
       .product-grid { gap: 14px; }
-      .application-grid { grid-template-columns: 1fr; }
-      .application-card { min-height: auto; }
+      .application-grid { gap: 14px; }
+      .application-card { flex-basis: calc(100vw - 56px); grid-template-columns: 1fr; min-height: 0; }
+      .application-image { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
+      .application-content { min-height: 260px; padding: 28px; }
       .application-card h3 { margin-top: 28px; }
       .product-card { border-radius: 6px; }
       .carousel-slide { flex-basis: calc(100vw - 56px); border-radius: 6px; }
@@ -1233,11 +1255,17 @@
           <div><p class="eyebrow">应用场景</p><h2 id="application-title">面向生产与公共空间的臭氧处理方案</h2></div>
           <p>根据空间体积、密闭性、环境条件和处理目标配置设备。以下场景仅建议在无人、无动物的封闭时段进行处理。</p>
         </div>
-        <div class="application-grid">
-          <article class="application-card has-image"><img class="application-image" src="/assets/applications/mushroom-production.webp" alt="无人状态下的现代食用菌生产菇房" width="800" height="600" loading="lazy" decoding="async"><span>01</span><h3>食用菌生产</h3><p>适用于接种室、菇房与更衣室，结合生产流程规划设备规格、运行时间与通风安排。</p></article>
-          <article class="application-card has-image"><img class="application-image" src="/assets/applications/school.webp" alt="无人状态下的现代学校教室" width="800" height="600" loading="lazy" decoding="async"><span>02</span><h3>学校</h3><p>可针对教室、宿舍、图书馆等空间，在清场后的非使用时段制定阶段性处理方案。</p></article>
-          <article class="application-card has-image"><img class="application-image" src="/assets/applications/hospital.webp" alt="无人状态下的现代医院走廊" width="800" height="600" loading="lazy" decoding="async"><span>03</span><h3>医院与医疗场所</h3><p>仅作为经专业评估的环境处理手段，不替代常规清洁、消毒和医院感染控制流程。</p></article>
-          <article class="application-card has-image"><img class="application-image" src="/assets/applications/commercial-public-space.webp" alt="无人状态下的商业综合体公共空间" width="800" height="600" loading="lazy" decoding="async"><span>04</span><h3>商业综合体及公共场所</h3><p>面向商场、酒店、办公区、交通服务空间等，按面积、分区和通风条件进行方案设计。</p></article>
+        <div class="application-carousel" aria-label="应用场景轮播" data-carousel-root>
+          <div class="application-grid" tabindex="0" data-carousel-track>
+            <article class="application-card has-image"><img class="application-image" src="/assets/applications/mushroom-production.webp" alt="无人状态下的现代食用菌生产菇房" width="800" height="600" loading="lazy" decoding="async"><div class="application-content"><span>01 / 应用场景</span><h3>食用菌生产</h3><p>适用于接种室、菇房与更衣室，结合生产流程规划设备规格、运行时间与通风安排。</p></div></article>
+            <article class="application-card has-image"><img class="application-image" src="/assets/applications/school.webp" alt="无人状态下的现代学校教室" width="800" height="600" loading="lazy" decoding="async"><div class="application-content"><span>02 / 应用场景</span><h3>学校</h3><p>可针对教室、宿舍、图书馆等空间，在清场后的非使用时段制定阶段性处理方案。</p></div></article>
+            <article class="application-card has-image"><img class="application-image" src="/assets/applications/hospital.webp" alt="无人状态下的现代医院走廊" width="800" height="600" loading="lazy" decoding="async"><div class="application-content"><span>03 / 应用场景</span><h3>医院与医疗场所</h3><p>仅作为经专业评估的环境处理手段，不替代常规清洁、消毒和医院感染控制流程。</p></div></article>
+            <article class="application-card has-image"><img class="application-image" src="/assets/applications/commercial-public-space.webp" alt="无人状态下的商业综合体公共空间" width="800" height="600" loading="lazy" decoding="async"><div class="application-content"><span>04 / 应用场景</span><h3>商业综合体及公共场所</h3><p>面向商场、酒店、办公区、交通服务空间等，按面积、分区和通风条件进行方案设计。</p></div></article>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" data-carousel-direction="previous" aria-label="查看上一个应用场景">←</button>
+            <button class="carousel-button" type="button" data-carousel-direction="next" aria-label="查看下一个应用场景">→</button>
+          </div>
         </div>
         <p class="application-note">安全提示：臭氧处理期间人员和动物必须离场；处理完成后应预留分解时间并充分通风，确认符合当地职业健康和公共场所安全要求后方可重新进入。</p>
         <div class="application-actions"><a class="button" href="/zh/applications/mushroom-farm-ozone-disinfection/">查看食用菌应用选型指南</a><a class="button" href="/zh/contact/#inquiry-form">提交公共场所需求</a></div>
@@ -1339,11 +1367,29 @@
 
   <script>
     (() => {
-      const track = document.querySelector('.carousel-track');
-      if (!track) return;
-      const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * 0.86, behavior: 'smooth' });
-      document.querySelector('[data-carousel="previous"]').addEventListener('click', () => move(-1));
-      document.querySelector('[data-carousel="next"]').addEventListener('click', () => move(1));
+      const setupCarousel = (root, track, previous, next) => {
+        if (!track || !previous || !next) return;
+        const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * 0.86, behavior: 'smooth' });
+        previous.addEventListener('click', () => move(-1));
+        next.addEventListener('click', () => move(1));
+      };
+
+      const productTrack = document.querySelector('.carousel-track');
+      setupCarousel(
+        document.querySelector('.product-carousel'),
+        productTrack,
+        document.querySelector('[data-carousel="previous"]'),
+        document.querySelector('[data-carousel="next"]')
+      );
+
+      document.querySelectorAll('[data-carousel-root]').forEach((root) => {
+        setupCarousel(
+          root,
+          root.querySelector('[data-carousel-track]'),
+          root.querySelector('[data-carousel-direction="previous"]'),
+          root.querySelector('[data-carousel-direction="next"]')
+        );
+      });
     })();
   </script>
 
