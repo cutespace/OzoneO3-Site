@@ -971,6 +971,55 @@
 
     .feature-heading p:last-child { color: var(--muted); }
 
+    .application-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .application-card {
+      min-height: 250px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f1efe8;
+    }
+
+    .application-card span {
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+    }
+
+    .application-card h3 {
+      margin: 46px 0 14px;
+      color: var(--deep-sage);
+      font-size: 1.35rem;
+    }
+
+    .application-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .application-note {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      color: var(--muted);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    .application-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
     .carousel-track { gap: 20px; padding-bottom: 16px; }
 
     .carousel-slide {
@@ -1043,6 +1092,7 @@
       .intro { gap: 18px; padding: 76px 0; }
       .collection { padding-bottom: 82px; }
       .feature { padding: 70px 0; }
+      .application-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .carousel-slide { flex-basis: min(88vw, 560px); }
       .carousel-content { padding: 30px; }
       .cta { padding: 52px 30px; }
@@ -1062,6 +1112,9 @@
       .hero-visual { border-radius: 6px; }
       .collection-heading, .feature-heading { padding-bottom: 14px; }
       .product-grid { gap: 14px; }
+      .application-grid { grid-template-columns: 1fr; }
+      .application-card { min-height: auto; }
+      .application-card h3 { margin-top: 28px; }
       .product-card { border-radius: 6px; }
       .carousel-slide { flex-basis: calc(100vw - 56px); border-radius: 6px; }
       .cta { padding: 46px 24px; border-radius: 6px; }
@@ -1158,12 +1211,19 @@
         </div>
       </section>
 
-      <section class="shell feature" aria-labelledby="mushroom-application-title">
+      <section class="shell feature" aria-labelledby="application-title">
         <div class="feature-heading">
-          <div><p class="eyebrow">应用方案</p><h2 id="mushroom-application-title">食用菌生产环境臭氧消毒</h2></div>
-          <p>了解接种室、菇房与更衣室的设备选型、适用空间、运行原则和安全注意事项。</p>
+          <div><p class="eyebrow">应用场景</p><h2 id="application-title">面向生产与公共空间的臭氧处理方案</h2></div>
+          <p>根据空间体积、密闭性、环境条件和处理目标配置设备。以下场景仅建议在无人、无动物的封闭时段进行处理。</p>
         </div>
-        <a class="button" href="/zh/applications/mushroom-farm-ozone-disinfection/">查看食用菌臭氧消毒设备选型指南</a>
+        <div class="application-grid">
+          <article class="application-card"><span>01</span><h3>食用菌生产</h3><p>适用于接种室、菇房与更衣室，结合生产流程规划设备规格、运行时间与通风安排。</p></article>
+          <article class="application-card"><span>02</span><h3>学校</h3><p>可针对教室、宿舍、图书馆等空间，在清场后的非使用时段制定阶段性处理方案。</p></article>
+          <article class="application-card"><span>03</span><h3>医院与医疗场所</h3><p>仅作为经专业评估的环境处理手段，不替代常规清洁、消毒和医院感染控制流程。</p></article>
+          <article class="application-card"><span>04</span><h3>商业综合体及公共场所</h3><p>面向商场、酒店、办公区、交通服务空间等，按面积、分区和通风条件进行方案设计。</p></article>
+        </div>
+        <p class="application-note">安全提示：臭氧处理期间人员和动物必须离场；处理完成后应预留分解时间并充分通风，确认符合当地职业健康和公共场所安全要求后方可重新进入。</p>
+        <div class="application-actions"><a class="button" href="/zh/applications/mushroom-farm-ozone-disinfection/">查看食用菌应用选型指南</a><a class="button" href="/zh/contact/#inquiry-form">提交公共场所需求</a></div>
       </section>
 
       <section class="shell feature" id="featured">
