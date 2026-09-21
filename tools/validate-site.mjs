@@ -28,6 +28,7 @@ for (const file of pages) {
   if (!/<title>[^<]+<\/title>/.test(html) || !/<meta name="description" content="[^"]+">/.test(html) || !/<link rel="canonical" href="[^"]+">/.test(html)) {
     errors.push(`${rel}: missing title, description, or canonical`);
   }
+  if (/\b(?:href|src)="undefined"/.test(html)) errors.push(`${rel}: undefined href or src`);
   const hreflangs = [...html.matchAll(/hreflang="([^"]+)"/g)].map((match) => match[1]);
   if (hreflangs.length && !["zh-CN", "en", "fr", "x-default"].every((lang) => hreflangs.includes(lang))) {
     errors.push(`${rel}: incomplete hreflang set`);
@@ -38,6 +39,10 @@ for (const file of pages) {
   for (const match of html.matchAll(/<a\s[^>]*href="([^"]+)"/g)) {
     const target = localTarget(match[1]);
     if (target && !fs.existsSync(target)) errors.push(`${rel}: broken local link ${match[1]}`);
+  }
+  for (const match of html.matchAll(/<img\s[^>]*src="([^"]+)"/g)) {
+    const target = localTarget(match[1]);
+    if (target && !fs.existsSync(target)) errors.push(`${rel}: missing local image ${match[1]}`);
   }
 }
 
