@@ -47,11 +47,24 @@ for (const file of pages) {
 }
 
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
+if (!sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
+  errors.push("sitemap: missing UTF-8 XML declaration or unexpected leading bytes");
+}
+if (!/<urlset\s+xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/.test(sitemap)) {
+  errors.push("sitemap: missing standard urlset namespace");
+}
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+if (new Set(urls).size !== urls.length) errors.push("sitemap: duplicate URLs found");
 for (const url of urls) {
+  if (!url.startsWith("https://ozoneo3.pages.dev/")) errors.push(`sitemap: unexpected origin for ${url}`);
   const pathname = new URL(url).pathname;
   const target = pathname === "/" ? path.join(root, "index.html") : path.join(root, pathname, "index.html");
   if (!fs.existsSync(target)) errors.push(`sitemap: missing file for ${url}`);
+}
+
+const headers = fs.readFileSync(path.join(root, "_headers"), "utf8");
+if (!/\/sitemap\.xml[\s\S]*Content-Type: application\/xml; charset=utf-8/.test(headers)) {
+  errors.push("headers: sitemap.xml must be served as application/xml");
 }
 
 if (errors.length) {
