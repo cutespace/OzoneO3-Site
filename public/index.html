@@ -26,12 +26,12 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ozoneo3.pages.dev/#organization","name":"CHUN YA","alternateName":"OZONE","url":"https://ozoneo3.pages.dev/","logo":{"@type":"ImageObject","url":"https://ozoneo3.pages.dev/assets/brand/chunya-logo.webp","width":512,"height":512}},{"@type":"WebSite","@id":"https://ozoneo3.pages.dev/#website","url":"https://ozoneo3.pages.dev/","name":"OZONE","inLanguage":"zh-CN"},{"@type":"ItemList","@id":"https://ozoneo3.pages.dev/#fcy-products","name":"FCY 系列臭氧发生器","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://ozoneo3.pages.dev/zh/products/fcy-1/","name":"FCY-1 臭氧发生器"},{"@type":"ListItem","position":2,"url":"https://ozoneo3.pages.dev/zh/products/fcy-3/","name":"FCY-3 臭氧发生器"},{"@type":"ListItem","position":3,"url":"https://ozoneo3.pages.dev/zh/products/fcy-3a/","name":"FCY-3A 臭氧发生器"},{"@type":"ListItem","position":4,"url":"https://ozoneo3.pages.dev/zh/products/fcy-3b/","name":"FCY-3B 臭氧发生器"},{"@type":"ListItem","position":5,"url":"https://ozoneo3.pages.dev/zh/products/fcy-5a/","name":"FCY-5A 臭氧发生器"},{"@type":"ListItem","position":6,"url":"https://ozoneo3.pages.dev/zh/products/fcy-5b/","name":"FCY-5B 臭氧发生器"},{"@type":"ListItem","position":7,"url":"https://ozoneo3.pages.dev/zh/products/fcy-5c/","name":"FCY-5C 臭氧发生器"}]}]}</script>
   <style>
     :root {
-      --ink: #151515;
-      --muted: #686868;
-      --paper: #f4f3ef;
-      --line: #d8d7d1;
+      --ink: #17201c;
+      --muted: #657069;
+      --paper: #f4f3ed;
+      --line: #d3d8d1;
       --accent: #dfff4f;
-      --card: #e6e4de;
+      --card: #e5e8df;
       --radius: 20px;
     }
 
@@ -52,7 +52,7 @@
     .page { overflow: hidden; }
 
     .shell {
-      width: min(1320px, calc(100% - 48px));
+      width: min(1200px, calc(100% - 48px));
       margin: 0 auto;
     }
 
@@ -88,7 +88,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 82px;
+      min-height: 76px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -133,16 +133,17 @@
     .hero {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      min-height: 620px;
-      padding: 42px 0 66px;
-      gap: 24px;
+      min-height: 520px;
+      padding: 44px 0 58px;
+      gap: 42px;
     }
 
     .hero-copy {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 35px 0 8px;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
     }
 
     h1, h2, h3, p { margin-top: 0; }
@@ -150,7 +151,7 @@
     h1 {
       max-width: 760px;
       margin-bottom: 26px;
-      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      font-size: clamp(3.2rem, 6.3vw, 6.2rem);
       line-height: .92;
       letter-spacing: -.075em;
     }
@@ -166,7 +167,7 @@
 
     .hero-visual {
       position: relative;
-      min-height: 460px;
+      min-height: 440px;
       border-radius: var(--radius);
       background: #212121;
       isolation: isolate;
@@ -224,7 +225,7 @@
       padding: 8%;
     }
 
-    .hero-photo { padding: 11%; }
+    .hero-photo { padding: 3%; }
 
     .feature-photo { padding: 9%; }
 
